@@ -2,12 +2,12 @@ package Lesson1;
 
 import java.awt.*;
 
-public abstract class Sprite {
+public abstract class Sprite {//создаем класс Sprite - символизирующий двумерный обьект, который будет иметь какое то поведение
 
-    protected float x;
-    protected float y;
-    protected float halfWidth;
-    protected float halfHeight;
+    protected float x;// координаты обьекта
+    protected float y;// координаты обьекта
+    protected float halfWidth;// его размеры
+    protected float halfHeight;// его размеры
 
     protected float getLeft() {
         return x - halfWidth;

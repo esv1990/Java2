@@ -3,28 +3,23 @@ package Lesson1;
 import java.awt.*;
 import java.util.Random;
 
-public class Ball extends Sprite {
+public class Ball extends Sprite {//создаем класс Ball и наследуем его от Sprite
     Random rnd = new Random();
-//    private final Color color = new Color (
-//            (int)(Math.random() * 255),
-//            (int)(Math.random() * 255),
-//            (int)(Math.random() * 255)
-//    );
 
     private final Color color;
     private float vX;
     private float vY;
 
-    Ball() {
-        halfHeight = 20 + (float) (Math.random() * 50f);
-        halfWidth = halfHeight;
-        color = new Color(rnd.nextInt());
-        vX = (float) (100f + (Math.random() * 200f));
-        vY = (float) (100f + (Math.random() * 200f));
+    Ball() {//Создаем конструктор Ball и определяем в нем размер
+        halfHeight = 20 + (float) (Math.random() * 50f);//высота
+        halfWidth = halfHeight;//ширина
+        color = new Color(rnd.nextInt());//определение цвета рандомноЫ
+        vX = (float) (100f + (Math.random() * 200f));//Определяем скорость по координате Х
+        vY = (float) (100f + (Math.random() * 200f));// Определяем скорость по координате У
     }
 
     @Override
-    void update(GameCanvas canvas, float deltaTime) {
+    void update(GameCanvas canvas, float deltaTime) {// перемещение шариков
         x += vX * deltaTime;
         y += vY * deltaTime;
 
@@ -47,9 +42,9 @@ public class Ball extends Sprite {
     }
 
     @Override
-    void render(GameCanvas canvas, Graphics g) {
-        g.setColor(color);
-        g.fillOval((int) getLeft(), (int) getTop(),
+    void render(GameCanvas canvas, Graphics g) {//метод отрисовки
+        g.setColor(color);// устанавливаем цвет
+        g.fillOval((int) getLeft(), (int) getTop(),// размеры и координаты
                 (int) getWidth(), (int) getHeight());
     }
 }
