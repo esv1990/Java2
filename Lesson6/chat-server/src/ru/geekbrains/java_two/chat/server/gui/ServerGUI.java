@@ -1,4 +1,6 @@
-package Lesson4;
+package ru.geekbrains.java_two.chat.server.gui;
+
+import ru.geekbrains.java_two.chat.server.core.ChatServer;
 
 import javax.swing.*;
 import java.awt.*;
@@ -46,7 +48,7 @@ public class ServerGUI extends JFrame implements ActionListener,
     public void actionPerformed(ActionEvent e) {
         Object src = e.getSource();
         if (src == btnStart) {
-            chatServer.start(11111);
+            chatServer.start(8189);
         } else if (src == btnStop) {
             //throw new RuntimeException("Hello from EDT!");
             chatServer.stop();
